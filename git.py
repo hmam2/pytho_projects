@@ -76,5 +76,3 @@ while play_agine():
     new_game()
 
 print("Byyyyeee🥰")
-                
-print("good bye")
