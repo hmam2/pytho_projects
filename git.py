@@ -1,64 +1,64 @@
 #-------------------
-def new_game(): #finction for the game
-  Guesses = []  #التخميين بحيث يقوم هذا الامر بتقسيم الاسئلة والخيارات ليكون كل سؤال خياراته تحته
-  correct_gusses = 0 # رقم الخيار
-  question_num = 1 # رقم السؤال
+def new_game(): 
+  Guesses = []
+  correct_gusses = 0
+  question_num = 1 
 
-  for key in questions: # حلقة تكرارية للسؤال
+  for key in questions:
       print("-------------------")
-      print(key) # طباعة الاسئلة على الشاشة
-      for i in options[question_num-1]: # امر خاص بالاختيارات للأسئلة
-          print(i) # طباعة الاختيارات
-      guess = input("Enter(A,B,C,D):") #امر يقوم بؤال اللاعب ليختار رقم الاجابة
+      print(key) 
+      for i in options[question_num-1]: 
+          print(i)
+      guess = input("Enter(A,B,C,D):") 
       guess = guess.upper()
       Guesses.append(guess)
 
-      correct_gusses += cheeck_answer(questions.get(key),(guess)) #التخممين الصحيح = التحقق من الاجابة
-      question_num += 1 # رقم السؤال
-  display_score(correct_gusses,Guesses) # امر خاص لظهوؤ نتيجة اللاعب على الشاشة
+      correct_gusses += cheeck_answer(questions.get(key),(guess)) 
+      question_num += 1
+  display_score(correct_gusses,Guesses) 
 
 
 
 
 #-----------------
-def cheeck_answer(answer,guess):  #الدالة الخاصةللتحقق من السؤال
-    if answer == guess: # شرط للتحقق من ان الجواب = التخممين 
+def cheeck_answer(answer,guess):  
+    if answer == guess:  
         print("correct")
         return 1
     else: 
         print("wrong answer")
         return 0
 #-----------------
-def display_score (correct_gusses,Guesses): # دالة خاصة لظهور النتيجة على الشاشة 
+def display_score (correct_gusses,Guesses):  
     print("---------------------")
     print("Score: ") 
     print("---------------------")
-    print("correct answer: ",end="") # امر خاص لطباعة الاجوبة الصحيحة للاعب 
+    print("correct answer: ",end="")
     for i in questions:
         print(questions.get(i),end=" ")
     print()
-    print("your answer: ",end="") # الاجوبة التي جاوب علىيها المستخدم
+    print("your answer: ",end="")
     for i in Guesses:
         print(i,end=" ")
     print()
-    score = int((correct_gusses/len(questions))*100)  #الامر الخاص باظهار النتيجة 
+    score = int((correct_gusses/len(questions))*100
     print("your score is :"+str(score)+"%")
 
 
 
 
 #-----------------
-def play_agine(): # الدالة الخاصة اذا اراد اللاعب اللعب مرة اخرى 
+def play_agine(): 
     response = input("do you like play agin? (yes or no):")
     response=response.upper()
 
-    if response == "YES": # اذا جاوب اللاعب بنعم يعيد اللعبة اذا جاوب لا يخرج من اللعبة
+    if response == "YES": 
         return  True
     else:
         return False
 #-----------------
 
-questions = {  # القاموس الخاص بالاسئلة
+questions = {
     "ما هو اول جامع تم بناءه في مصر؟" : "A",
     "ما هي أطول سورة مدنية في عدد آياتها؟" : "C",
     "متى وقع صُلح الحُديبية؟" : "D",
