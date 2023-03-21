@@ -1,18 +1,18 @@
 
-def calculater (a,b):
+def calculater (a,b): 
     a = float(input('enter the first number:'))
     operation = input("operation you need : ")
     b = float(input('enter the second number:'))
-    if operation == "+" :
+    if operation == "+" :  #Adding(+)
         plus_result = a + b 
         print (f'{a} + {b}  = {plus_result}')
-    elif operation == "-" :
+    elif operation == "-" : #subtract(-)
         minus_result = a - b 
         print (f'{a} - {b}  = {minus_result}')
-    elif operation == "*":
+    elif operation == "*": #Multiply(*)
         result = a * b 
-        print (f'{a} * {b}  = {result}')
-    elif operation == '/':
+        print (f'{a} * {b}  = {result}') 
+    elif operation == '/': #divide(/)
         dvide_ruslt = a / b 
         print (f'{a} / {b}  = {dvide_ruslt}')
         
