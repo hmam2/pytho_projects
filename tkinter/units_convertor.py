@@ -7,12 +7,12 @@ def convert ():
         mile = entry_int.get()
     except UnboundLocalError:
         frame_entry.delete(0,END)
-        frame_entry.insert(0,"Error")
-        output_string.set("")
+        frame_entry.insert(0,0)
+        output_string.set("Error")
     except tkinter.TclError:
         frame_entry.delete(0,END)
-        frame_entry.insert(0,"Error")
-        output_string.set("")
+        frame_entry.insert(0,0)
+        output_string.set("Error")
     else: 
         mile = entry_int.get()
         km_out = mile * 1.61
@@ -25,12 +25,12 @@ def mile_to_meter():
         mile = entry_int.get()
     except UnboundLocalError:
        frame_entry.delete(0,END)
-       frame_entry.insert(0,"Error")
-       output_string.set("")
+       frame_entry.insert(0,0)
+       output_string.set("Error")
     except tkinter.TclError:
        frame_entry.delete(0,END)
-       frame_entry.insert(0,"Error")
-       output_string.set("")
+       frame_entry.insert(0,0)
+       output_string.set("Erorr")
     else: 
         mile = entry_int.get()
         meter_out = mile * 1.609
@@ -42,7 +42,7 @@ def mile_to_meter():
 
 
 window = ttk.Window(themename="darkly")
-window.title("Units convert")
+window.title("Units convertor")
 window.geometry("380x150")
 
 label = tk.Label(master= window,text="Units convert",font= "Arial 18 bold",fg="blue")
@@ -60,5 +60,8 @@ meter_button.pack(side = "left")
 output_string = tk.StringVar()
 outbut_label = tk.Label(master=window,textvariable=output_string,font="Arial 16 bold")
 outbut_label.pack()
+
+#exit_button  = Button(master=window,text="Exit",command=quit,font="Arial 12")
+#+exit_button.pack(side=RIGHT) 
 
 window.mainloop()
